@@ -1,5 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import AppBar from './AppBar';
+import { BrowserRouter } from 'react-router-dom';
+import Layout from './layout';
+
 
 function App() {
   console.log(window.ipcRenderer);
@@ -40,6 +43,12 @@ function App() {
           <AppBar />
         </div>
       )}
+      {/*  <Suspense fallback={null}>
+        <BrowserRouter>
+          <Layout />
+        </BrowserRouter>
+      </Suspense> */}
+      <Layout />
       <div className="flex-auto">
         <div className=" flex flex-col justify-center items-center h-full bg-gray-800 space-y-4">
           <h1 className="text-2xl text-gray-200">Vite + React + Typescript + Electron + Tailwind</h1>
